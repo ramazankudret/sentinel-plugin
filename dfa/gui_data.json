@@ -1,0 +1,14 @@
+{
+  "traffic_level": "low",
+  "dfa_detect_state": "q0",
+  "dfa_defense_state": "s0",
+  "blocked_ips": [
+    "192.168.1.193"
+  ],
+  "ip_nodes": [],
+  "ip_category_stats": {
+    "Sald\u0131rgan": 40,
+    "\u015e\u00fcpheli": 0,
+    "Temiz": 32
+  }
+}

@@ -1,0 +1,35 @@
+<dfa>
+  <alphabet>
+    <symbol>low</symbol>
+    <symbol>mid</symbol>
+    <symbol>high</symbol>
+  </alphabet>
+  <states>
+    <state name="q0" start="true" accept="false"/>
+    <state name="q1" start="false" accept="false"/>
+    <state name="q2" start="false" accept="true"/>
+    <state name="q3" start="false" accept="false"/>
+  </states>
+  <transitions>
+    <!-- Normal trafik -->
+    <transition><from>q0</from><input>low</input><to>q0</to></transition>
+    <transition><from>q0</from><input>mid</input><to>q1</to></transition>
+    <transition><from>q0</from><input>high</input><to>q2</to></transition>
+
+    <!-- Şüpheli trafik -->
+    <transition><from>q1</from><input>low</input><to>q0</to></transition>
+    <transition><from>q1</from><input>mid</input><to>q1</to></transition>
+    <transition><from>q1</from><input>high</input><to>q2</to></transition>
+
+    <!-- Saldırı durumu -->
+    <transition><from>q2</from><input>high</input><to>q2</to></transition>
+    <transition><from>q2</from><input>mid</input><to>q3</to></transition>
+    <transition><from>q2</from><input>low</input><to>q0</to></transition>
+
+    <!-- Geçici gözlem -->
+    <transition><from>q3</from><input>low</input><to>q0</to></transition>
+    <transition><from>q3</from><input>mid</input><to>q2</to></transition>
+    <transition><from>q3</from><input>high</input><to>q2</to></transition>
+  </transitions>
+</dfa>
+

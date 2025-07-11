@@ -1,0 +1,48 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# DFA output / logs
+logs/
+*.log
+
+# .NET build files
+bin/
+obj/
+
+# Panel config files
+*.dll
+*.exe
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python egg
+*.egg
+*.egg-info/
+dist/
+build/
+
+# PyInstaller output
+*.spec
+
+# JSON data files (only for testing)
+!dfa/shared_data.json
+!dfa/gui_data.json
+
+# Others
+*.sqlite3

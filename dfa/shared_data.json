@@ -1,0 +1,6 @@
+{
+    "traffic_level": "low",
+    "blocked_ips": [
+        "192.168.1.193"
+    ]
+}

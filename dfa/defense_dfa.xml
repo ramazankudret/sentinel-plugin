@@ -1,0 +1,41 @@
+<dfa>
+  <alphabet>
+    <symbol>low</symbol>
+    <symbol>mid</symbol>
+    <symbol>high</symbol>
+  </alphabet>
+  <states>
+    <state name="s0" start="true" accept="false"/>
+    <state name="s1" start="false" accept="false"/>
+    <state name="s2" start="false" accept="false"/>
+    <state name="s3" start="false" accept="true"/>
+    <state name="s4" start="false" accept="false"/>
+  </states>
+  <transitions>
+    <!-- s0: Bekleme / saldırı başlangıcı -->
+    <transition><from>s0</from><input>low</input><to>s0</to></transition>
+    <transition><from>s0</from><input>mid</input><to>s0</to></transition>
+    <transition><from>s0</from><input>high</input><to>s1</to></transition>
+
+    <!-- s1: Saldırı sinyali tespit edildi -->
+    <transition><from>s1</from><input>low</input><to>s2</to></transition>
+    <transition><from>s1</from><input>mid</input><to>s2</to></transition>
+    <transition><from>s1</from><input>high</input><to>s3</to></transition>
+
+    <!-- s2: Gözlem süreci -->
+    <transition><from>s2</from><input>low</input><to>s4</to></transition>
+    <transition><from>s2</from><input>mid</input><to>s2</to></transition>
+    <transition><from>s2</from><input>high</input><to>s3</to></transition>
+
+    <!-- s3: Kalıcı engelleme -->
+    <transition><from>s3</from><input>low</input><to>s2</to></transition>
+    <transition><from>s3</from><input>mid</input><to>s3</to></transition>
+    <transition><from>s3</from><input>high</input><to>s3</to></transition>
+
+    <!-- s4: Temizlenme süreci -->
+    <transition><from>s4</from><input>low</input><to>s0</to></transition>
+    <transition><from>s4</from><input>mid</input><to>s2</to></transition>
+    <transition><from>s4</from><input>high</input><to>s3</to></transition>
+  </transitions>
+</dfa>
+
