@@ -12,27 +12,27 @@
     <state name="s4" start="false" accept="false"/>
   </states>
   <transitions>
-    <!-- s0: Bekleme / saldırı başlangıcı -->
+    <!-- s0: Waiting / attack initiation -->
     <transition><from>s0</from><input>low</input><to>s0</to></transition>
     <transition><from>s0</from><input>mid</input><to>s0</to></transition>
     <transition><from>s0</from><input>high</input><to>s1</to></transition>
 
-    <!-- s1: Saldırı sinyali tespit edildi -->
+    <!-- s1: Attack signal detected -->
     <transition><from>s1</from><input>low</input><to>s2</to></transition>
     <transition><from>s1</from><input>mid</input><to>s2</to></transition>
     <transition><from>s1</from><input>high</input><to>s3</to></transition>
 
-    <!-- s2: Gözlem süreci -->
+    <!-- s2: Observation phase -->
     <transition><from>s2</from><input>low</input><to>s4</to></transition>
     <transition><from>s2</from><input>mid</input><to>s2</to></transition>
     <transition><from>s2</from><input>high</input><to>s3</to></transition>
 
-    <!-- s3: Kalıcı engelleme -->
+    <!-- s3: Permanent blocking -->
     <transition><from>s3</from><input>low</input><to>s2</to></transition>
     <transition><from>s3</from><input>mid</input><to>s3</to></transition>
     <transition><from>s3</from><input>high</input><to>s3</to></transition>
 
-    <!-- s4: Temizlenme süreci -->
+    <!-- s4: Clearing process -->
     <transition><from>s4</from><input>low</input><to>s0</to></transition>
     <transition><from>s4</from><input>mid</input><to>s2</to></transition>
     <transition><from>s4</from><input>high</input><to>s3</to></transition>

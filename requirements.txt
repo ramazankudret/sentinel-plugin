@@ -1,2 +1,6 @@
 lxml
 Flask
+scapy
+requests
+xmltodict
+
