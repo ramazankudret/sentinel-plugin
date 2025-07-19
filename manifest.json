@@ -1,8 +1,12 @@
 {
-  "name": "sentinel-ddos-dfa-plugin",
-  "version": "1.0.0",
-  "description": "A G-Assist plugin that uses DFA-based detection and defense for SYN flood DDoS attacks.",
+  "name": "sentinel-ddos",
+  "version": "1.0.3",
+  "description": "A DFA-based SYN flood detection plugin",
   "entry_point": "plugin.py",
+  "launch": {
+    "command": "python plugin.py",
+    "type": "manual"
+  },
   "functions": [
     {
       "name": "dfa_check",
@@ -20,7 +24,23 @@
           }
         },
         "required": ["ip", "syn_count"]
-      }
+      },
+      "examples": [
+        {
+          "user_input": "Check 192.168.1.10 with 300 SYN packets",
+          "parameters": {
+            "ip": "192.168.1.10",
+            "syn_count": 300
+          }
+        },
+        {
+          "user_input": "Run DFA check on 10.0.0.5, it sent 400 SYNs",
+          "parameters": {
+            "ip": "10.0.0.5",
+            "syn_count": 400
+          }
+        }
+      ]
     }
   ]
 }
